@@ -1,12 +1,14 @@
 const { Router } = require("express")
 
+const UserController = require("../controllers/userController")
+
 const routes = Router()
 
 routes.get("/", (req, res) => {
     res.send("Salve")
 })
 
-routes.post("/users") // Cria usuários
+routes.post("/users", UserController.createUser) // Cria usuários
 routes.get("/users") // Mostra usuários
 
 routes.get("users/:user_id") // Mostra usuário específico
