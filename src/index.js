@@ -8,7 +8,7 @@ const routes = require("./routes")
 
 const app = express()
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect("mongodb://localhost:27017/", {
     useUnifiedTopology : true,
     useNewUrlParser : true,
 }, console.log("Connected to database"))
