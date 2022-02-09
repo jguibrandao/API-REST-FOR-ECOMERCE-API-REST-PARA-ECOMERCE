@@ -18,7 +18,7 @@ routes.get("/users/:user_id", UserController.getUserById) // Mostra usuário esp
 routes.post("/sessions", SessionController.createSession) // Cria/faz login
 
 routes.post("/products/:user_id", ProductController.createProduct) // Cria produtos para usuário
-routes.get("/products/:user_id", ProductController.getUserProducts) // Mostra produtos de usuário
+routes.get("/:user_id/products", ProductController.getUserProducts) // Mostra produtos de usuário
 routes.patch("/products/:user_id/:product_id", ProductController.updateProduct) // Atualiza produto de usuário
 routes.delete("/products/user_id/:product_id", ProductController.deleteProduct) // Deleta determinado produto de determinado usuário
 
