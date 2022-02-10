@@ -3,6 +3,7 @@ const { Router } = require("express")
 const UserController = require("../controllers/UserController")
 const SessionController = require("../controllers/Session")
 const ProductController = require("../controllers/ProductController")
+const CartController = require("../controllers/CartController")
 
 const routes = Router()
 
@@ -25,9 +26,9 @@ routes.delete("/products/user_id/:product_id", ProductController.deleteProduct) 
 routes.get("/products", ProductController.getAllProducts) // Lista todos os produtos
 routes.get("/products/:product_id", ProductController.getProductById) // Mostra determinado produto
 
-routes.post("/cart/:user_id") // Cria carrinho para determinado usuário
-routes.get("/carts/:user_id") // Mostra todos os carrinhos de um cliente
+routes.post("/cart/:user_id", CartController.createCart) // Cria carrinho para determinado usuário
+routes.get("/:user_id/carts", CartController.getUserCarts) // Mostra todos os carrinhos de um cliente
 
-routes.get("/cart/:user_id/:cart_id") // Mostra carrinho específico de determinado cliente
+routes.get("/cart/:user_id/:cart_id", CartController.getCart) // Mostra carrinho específico de determinado cliente
 
 module.exports = routes
