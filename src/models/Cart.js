@@ -22,9 +22,13 @@ const Schema = new mongoose.Schema({
             type: String,
             required: true
         },
+        state: {
+            type: String,
+            required: true
+        },
         city: {
             type: String,
-            require: true
+            required: true
         }
     },
 
