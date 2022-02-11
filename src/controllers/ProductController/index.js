@@ -29,7 +29,7 @@ const ProductController = {
 
     async updateProduct(req, res) {
         const bodyData = req.body
-        const { product_id, user_id } = req.params
+        const { product_id } = req.params
 
         try {
             const updateProduct = await Product.findByIdAndUpdate(product_id, bodyData, { new: true })
@@ -40,7 +40,7 @@ const ProductController = {
     },
 
     async deleteProduct(req, res) {
-        const { product_id, user_id } = req.params
+        const { product_id } = req.params
 
         try {
             const deletedProduct = await Product.findByIdAndDelete(product_id)
